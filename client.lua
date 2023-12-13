@@ -34,15 +34,6 @@ local function passSomeBodys(element, x, y, z)
 	return false
 end
 
-local function duplicateRecordsByX(t, refcords)
-	local newT = {}
-	for i = 1, refcords do
-		for i, v in pairs(t) do
-			newT[#newT + 1] = v
-		end
-	end
-	return newT
-end
 local elementThatWasStreamedIn = {}
 local elementBackToStream = {}
 local passForSomeMS = {}
@@ -65,7 +56,6 @@ addEventHandler("onClientRender", root, function()
                         passForSomeMS[player] = getTickCount() + 100
                     end
 					if not elementBackToStream[player] then elementBackToStream[player] = true end
-					-- playersToUpdate[#playersToUpdate + 1] = {v, 'body' }
 				elseif elementBackToStream[player] then
 					elementBackToStream[player] = nil
 					setElementPosition(player, x1, y1, z1, true)
