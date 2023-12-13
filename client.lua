@@ -5,7 +5,7 @@
     ALSO YOU CAN OPTIMIZE IT BY CREATING 2 TABLES:
         PLAYERS IN 300 RANGE
         PLAYERS > 300 RANGE
-        
+
 ]]
 
 local pedBodyAttachmennts = {}
@@ -62,7 +62,7 @@ addEventHandler("onClientRender", root, function()
 				if (passForSomeMS[player] or 0) > getTickCount() or not passSomeBodys(player, x, y, z) then
 					setElementPosition(player, -6000, -6000, z1,true)
                     if (passForSomeMS[player] or 0) < getTickCount()  then
-                        passForSomeMS[player] = getTickCount() + 50
+                        passForSomeMS[player] = getTickCount() + 100
                     end
 					if not elementBackToStream[player] then elementBackToStream[player] = true end
 					-- playersToUpdate[#playersToUpdate + 1] = {v, 'body' }
